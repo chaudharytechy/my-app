@@ -1,0 +1,74 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.select-question {
+  font-size: 18px;
+  font-weight: bold;
+  color: #6a0572; /* Deep pinkish-purple */
+  margin-bottom: 10px;
+}
+
+.styled-select {
+  width: 250px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #d63384; /* Pink border */
+  border-radius: 8px;
+  background-color: #fff5f8;
+  color: #6a0572;
+  transition: all 0.3s ease; /* Smooth transition */
+  outline: none;
+}
+
+.styled-select:hover {
+  border-color: #9b2d59; /* Darker pink on hover */
+  box-shadow: 0 0 10px rgba(219, 112, 147, 0.5); /* Pink glow */
+}
+
+.styled-select:focus {
+  box-shadow: 0 0 15px rgba(219, 112, 147, 0.8);
+}
+
+.styled-select option {
+  padding: 10px;
+  background-color: #fff5f8; /* Light pink background */
+  color: hsl(29, 92%, 23%);
+}
+/* Import Google Fonts for a stylish look */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap');
+
+/* Firework animations */
+.firework {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(255,215,0,1) 0%, rgba(255,69,0,0.8) 40%, rgba(255,0,0,0) 60%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: firework-animation 2s infinite ease-in-out;
+}
+
+.firework-top-left { top: 10px; left: 10px; animation-delay: 0s; }
+.firework-top-right { top: 10px; right: 10px; animation-delay: 0.5s; }
+.firework-bottom-left { bottom: 10px; left: 10px; animation-delay: 1s; }
+.firework-bottom-right { bottom: 10px; right: 10px; animation-delay: 1.5s; }
+
+@keyframes firework-animation {
+  0% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(2); }
+}
+.fireworks-gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Stretch to cover the entire container */
+  z-index: -1; /* Place the GIF behind the text */
+  opacity: 0.5; /* Optional: Adjust transparency */
+}
