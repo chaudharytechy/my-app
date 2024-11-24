@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 export const First = () => {
   const [data, setData] = useState('');
   const [showBirthdayMessage, setShowBirthdayMessage] = useState(true);
-  const memories = ["Maldive", "Austria", "USA"];
+  const memories = ["After Shadi", "During Wedding", "With Friend", "Masti"];
   const countdownTime = 10; // Set initial countdown time in seconds
-  const [timeLeft, setTimeLeft] = useState(countdownTime) ;
+  const [timeLeft, setTimeLeft] = useState(countdownTime);
 
   // Timer for showing the birthday message
   useEffect(() => {
@@ -40,18 +40,28 @@ export const First = () => {
   return (
     <div className="container mt-5">
       {showBirthdayMessage ? (
-        <div className="text-center p-5 bg-light rounded shadow position-relative">
+        <div
+          className="text-center p-5 bg-light rounded shadow position-relative"
+          style={{
+            position: "absolute",
+            top: "10%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "80%",
+            zIndex: 1000,
+          }}
+        >
           <h6
             className="display-7 text-primary fw-bold fst-italic"
             style={{ fontFamily: "'Pacifico', cursive" }}
           >
-          🎉 Celebrating Your Special Day! Happy Anniversary! 🎉
+            🎉 Celebrating Your Special Day! Happy Anniversary! 🎉
           </h6>
           <p
             className="lead text-secondary fst-italic"
             style={{ fontFamily: "'Dancing Script', cursive" }}
           >
-         Wishing you both a day filled with joy, laughter, and unforgettable memories together!
+            Wishing you both a day filled with joy, laughter, and unforgettable memories together!
           </p>
 
           {/* Countdown Timer Circle */}
@@ -61,7 +71,6 @@ export const First = () => {
               width: '120px',
               height: '120px',
               borderRadius: '50%',
-              // border: '3px solid',
               borderImage: 'linear-gradient(135deg, #ff6a00, #ee0979, #ff6a00) 1',
               boxShadow: '0 0 20px rgba(255, 105, 180, 0.7)',
               backgroundColor: '#fff',
@@ -74,7 +83,7 @@ export const First = () => {
           </div>
         </div>
       ) : (
-        <div>
+        <div style={{ marginTop: "" }}>
           <div className="select-container mb-4">
             <label className="select-question h4 mb-3 text-dark">
               Which memory would you like to revisit?
@@ -86,18 +95,18 @@ export const First = () => {
               ))}
             </select>
           </div>
-          
+
           {/* Conditional rendering of the carousel */}
-          <div style={{ width: "80%", margin: "0 auto" }}>
+          <div style={{ width: "280px", height:"150px", margin: "0 auto" }}>
             {data && (
               <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                   {[1, 2, 3].map((num) => (
                     <div key={num} className={`carousel-item ${num === 1 ? "active" : ""}`}>
                       <img
-                        src={`../../images/${data.toLowerCase()}${num}.jpg`}
-                        className="d-block w-100"
-                        alt={`${data} ${num}`}
+                        src={`../../images/${data.replace(/\s+/g, '').toLowerCase()}${num}.jpeg`} // Fixed error here
+                        className="d-block img-fluid mx-auto"
+                        alt={`${data.replace(/\s+/g, '').toLowerCase()}${num}`} // Correct alt text
                       />
                     </div>
                   ))}

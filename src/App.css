@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
 }
 
 .select-question {
@@ -14,7 +14,7 @@
 
 .styled-select {
   width: 250px;
-  padding: 10px;
+  padding: 5px;
   font-size: 16px;
   border: 2px solid #d63384; /* Pink border */
   border-radius: 8px;
