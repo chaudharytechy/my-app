@@ -6,7 +6,7 @@ export const First = () => {
   const [showBirthdayMessage, setShowBirthdayMessage] = useState(true);
   const memories = ["Maldive", "Austria", "USA"];
   const countdownTime = 10; // Set initial countdown time in seconds
-  const [timeLeft, setTimeLeft] = useState(countdownTime);
+  const [timeLeft, setTimeLeft] = useState(countdownTime) ;
 
   // Timer for showing the birthday message
   useEffect(() => {
